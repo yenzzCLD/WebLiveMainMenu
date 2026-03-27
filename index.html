@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EXX LIVE</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body, html { 
+            background: #000; 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+        }
+
+        /* Iframe dibuat full screen 100% */
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe 
+        id="main-frame" 
+        src="https://bokepindoh.com" 
+        sandbox="allow-scripts allow-same-origin allow-forms" 
+        allowfullscreen="true">
+    </iframe>
+
+</body>
+</html>
+
