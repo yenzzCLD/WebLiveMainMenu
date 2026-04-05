@@ -16,7 +16,6 @@
             width: 100vw; 
             height: 100vh; 
             overflow: hidden; 
-            position: relative;
         }
 
         /* Iframe dibuat full screen 100% */
@@ -26,43 +25,9 @@
             border: none; 
             display: block;
         }
-
-        /* Styling Tombol Full Screen */
-        #fs-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s, background 0.2s;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
-        }
-
-        #fs-button:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.1);
-        }
-
-        #fs-button img {
-            width: 25px;
-            height: 25px;
-            filter: invert(1); /* Mengubah ikon hitam menjadi putih agar terlihat di background gelap */
-        }
     </style>
 </head>
 <body>
-
-    <div id="fs-button" onclick="toggleFullScreen()" title="Full Screen">
-        <img src="https://cdn-icons-png.freepik.com/512/8373/8373465.png" alt="FS">
-    </div>
 
     <iframe 
         id="main-frame" 
@@ -70,30 +35,6 @@
         sandbox="allow-scripts allow-same-origin allow-forms" 
         allowfullscreen="true">
     </iframe>
-
-    <script>
-        function toggleFullScreen() {
-            var iframe = document.getElementById("main-frame");
-
-            if (!document.fullscreenElement) {
-                // Masuk ke mode full screen
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.mozRequestFullScreen) { // Firefox
-                    iframe.mozRequestFullScreen();
-                } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari & Opera
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) { // IE/Edge
-                    iframe.msRequestFullscreen();
-                }
-            } else {
-                // Keluar dari mode full screen
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        }
-    </script>
 
 </body>
 </html>
